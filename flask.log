@@ -1,0 +1,23 @@
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 411-112-961
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 411-112-961
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:34] "[36mGET / HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:34] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:34] "[36mGET /script.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:36] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:36] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:36] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:36] "[36mGET /script.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:40] "POST /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:44] "PUT /update_file/156 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:44] "POST /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:47] "DELETE /delete_file/157 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:47] "POST /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2024 19:19:52] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\SJK\\fe\\fe\\back.py', reloading
+INFO:werkzeug: * Restarting with stat
