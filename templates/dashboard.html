@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Dashboard</title>
+    <style>
+        /* Additional styling for file rows */
+        .file-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        /* Adjust button size */
+        .file-cell button {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container" id="formContainer">
+            <!-- Form for uploading files -->
+            <form id="uploadForm" class="form" onsubmit="return uploadFile()">
+                <h2>File Upload</h2>
+                <div class="input-container">
+                    <input type="file" id="fileInput" required>
+                </div>
+                <button type="submit" id="uploadButton">Upload</button>
+
+                <!-- Loading bar -->
+                <div id="progressBarContainer" style="display: none;">
+                    <div id="progressBar"></div>
+                </div>
+            </form>
+
+            <!-- Table-like layout for displaying files -->
+            <div class="file-table">
+                <div class="file-row heading">
+                    <div class="file-cell">File Name</div>
+                    <div class="file-cell">File Type</div>
+                    <div class="file-cell">Created</div>
+                    <div class="file-cell">Modified</div>
+                    <div class="file-cell">Actions</div>
+                </div>
+                <!-- File rows will be dynamically added here after successful upload -->
+                {% for file in files %}
+                <div class="file-row" id="fileRow{{ file.id }}">
+                    <div class="file-cell">{{ file.filename }}</div>
+                    <div class="file-cell">{{ file.file_type }}</div>
+                    <div class="file-cell">{{ file.created_time }}</div>
+                    <div class="file-cell">{{ file.modified_time }}</div>
+                    <div class="file-cell">
+                        <button onclick="updateFile({{ file.id }})">Update</button>
+                        <button onclick="deleteFile({{ file.id }})">Delete</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="logout-container">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <script>
+        function updateFile(fileId) {
+            // Implement update functionality here
+            alert('Update file with ID: ' + fileId);
+        }
+
+        function deleteFile(fileId) {
+            // Implement delete functionality here
+            alert('Delete file with ID: ' + fileId);
+        }
+    </script>
+</body>
+
+</html>
