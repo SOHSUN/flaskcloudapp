@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Login, Signup, and Upload</title>
+    <style>
+        /* Adjust button size */
+        .form button {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container" id="formContainer">
+            <form id="loginForm" class="form" onsubmit="return loginUser()">
+                <h2>Login</h2>
+                <div class="input-container">
+                    <input type="text" id="loginUsername" required>
+                    <label for="loginUsername">Username</label>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="loginPassword" required>
+                    <label for="loginPassword">Password</label>
+                </div>
+                <button type="submit">Login</button>
+                <p class="form-switch">Don't have an account? <a href="#" onclick="switchForm('signupForm')">Sign Up</a></p>
+            </form>
+
+            <form id="signupForm" class="form" style="display: none;" onsubmit="return signupUser()">
+                <h2>Sign Up</h2>
+                <div class="input-container">
+                    <input type="text" id="signupUsername" required>
+                    <label for="signupUsername">Username</label>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="signupPassword" required>
+                    <label for="signupPassword">Password</label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p class="form-switch">Already have an account? <a href="#" onclick="switchForm('loginForm')">Login</a></p>
+            </form>
+
+            <!-- Add a new form for uploading files -->
+            <form id="uploadForm" class="form" style="display: none;" onsubmit="return uploadFile()">
+                <h2>File Upload</h2>
+                <div class="input-container">
+                    <input type="file" id="fileInput" required>
+                </div>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
